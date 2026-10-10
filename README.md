@@ -1,16 +1,14 @@
 # Anti-Hacked-Account Discord Bot
 
-Kicks accounts that show the typical "compromised account" behavior: posting the **same message in multiple channels** within a short window, usually with an **@everyone / @here** ping.
+Kicks accounts that show the typical "compromised account" behavior
 
 ## How it works
 
-1. Every message containing `@everyone` or `@here` is fingerprinted (text normalized + attachment names/sizes, so image scams are caught too).
+1. Every message containing `@everyone` or `@here` is fingerprinted.
 2. If the same user posts the same fingerprint in **3+ different channels within 60 seconds**, the bot:
    - DMs them that their account looks compromised
-   - Kicks them and deletes the spam messages (they can rejoin once their account is secured)
+   - Kicks them and deletes the spam messages
    - Posts a summary to your mod-log channel
-
-The ping check counts the text even if the ping didn't go through, since hacked accounts often lack permission to actually ping everyone.
 
 ## Setup
 
@@ -34,7 +32,3 @@ The ping check counts the text even if the ping didn't go through, since hacked 
 | `EXEMPT_ROLE_IDS` | Comma-separated role IDs that are never kicked, e.g. your mod roles |
 
 To get an ID, enable Developer Mode (User Settings → Advanced), then right-click the channel or role → Copy ID. Everything else (3 channels in 60 seconds, ping required, kick, DM) is fixed in the code.
-
-## Hosting
-
-The bot needs to run 24/7 to protect the server — a VPS, a Raspberry Pi, or a host like Railway / fly.io works. Restarts only reset the short in-memory tracking window, nothing else is stored.
