@@ -1,0 +1,8 @@
+# Secrets — never commit your bot token
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
