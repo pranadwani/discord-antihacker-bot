@@ -25,8 +25,8 @@ Kicks accounts that show the typical "compromised account" behavior
 
 ## `.env` settings
 
-DISCORD_TOKEN: Your bot token
-LOG_CHANNEL_ID: Channel where kick reports are posted. Leave blank for none
-EXEMPT_ROLE_IDS: Comma-separated role IDs that are never kicked
+1. DISCORD_TOKEN: Your bot token
+2. LOG_CHANNEL_ID: Channel where kick reports are posted. Leave blank for none
+3. EXEMPT_ROLE_IDS: Comma-separated role IDs that are never kicked
 
 To get an ID, enable Developer Mode, then right-click the channel or role → Copy ID.
